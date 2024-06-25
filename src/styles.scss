@@ -1,0 +1,34 @@
+$primary-color: #fff;
+$dark-color: #353c3f;
+$brown-color: #756867;
+$accent-color: #ff8d3f;
+$light-grey-color: #d5d6d2;
+
+$primary-font-family: "Domine", sans-serif;
+$secondary-font-family: "Yeseva One", sans-serif;
+
+@font-face {
+  font-family: "Domine";
+  src: url("assets/fonts/Domine/Domine-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yeseva One";
+  src: url("assets/fonts/Yeseva/YesevaOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+h1,
+p {
+  font-family: $primary-font-family;
+  color: $dark-color;
+  margin: 0px;
+}
