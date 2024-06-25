@@ -4,7 +4,7 @@ $brown-color: #756867;
 $accent-color: #ff8d3f;
 $light-grey-color: #d5d6d2;
 
-$primary-font-family: "Domine", sans-serif;
+$primary-font-family: "Domine";
 $secondary-font-family: "Yeseva One", sans-serif;
 
 @font-face {
@@ -22,13 +22,35 @@ $secondary-font-family: "Yeseva One", sans-serif;
   font-style: normal;
 }
 
-body {
-  box-sizing: border-box;
+@mixin containerStyle {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 10px 120px;
+  background-color: $dark-color;
 }
 
-h1,
-p {
+@mixin flexColumnWithGap($gap: 5px) {
+  display: flex;
+  flex-direction: column;
+  row-gap: $gap;
+}
+
+body {
+  box-sizing: border-box;
   font-family: $primary-font-family;
-  color: $dark-color;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0px;
+  color: $dark-color;
+}
+
+p {
+  font-size: small;
 }
