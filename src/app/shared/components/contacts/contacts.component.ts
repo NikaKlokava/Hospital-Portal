@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Contact, CONTACTS } from 'src/assets/mocks/contacts';
+import { CONTACTS } from './contacts';
+import { Contact } from './contact.model';
 
 @Component({
   selector: 'hp-contacts',
