@@ -1,0 +1,8 @@
+<div class="hp-header-container">
+  <div class="hp-navbar-container">
+    <a *ngFor="let navbarItem of navbarItems" class="hp-navbar-item">{{
+      navbarItem
+    }}</a>
+  </div>
+  <hp-styled-button btnType="text" btnText="Login" (btnClick)="login()" />
+</div>

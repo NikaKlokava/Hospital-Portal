@@ -1,0 +1,43 @@
+@import "../../../../styles";
+
+.hp-contacts-container {
+  @include flexColumnWithGap;
+  align-items: center;
+  padding: 10px 120px;
+
+  .hp-title {
+    font-family: $secondary-font-family;
+    margin-bottom: 20px;
+  }
+
+  .hp-subtitle {
+    color: $brown-color;
+  }
+
+  .hp-contact-items-container {
+    display: flex;
+    column-gap: 30px;
+
+    .hp-contact-item {
+      @include flexColumnWithGap($gap: 10px);
+      background-color: $brown-color;
+      width: 125px;
+      height: 100px;
+      padding: 20px;
+
+      .hp-contact-svg {
+        height: 20px;
+        align-self: flex-start;
+      }
+
+      p {
+        color: $primary-color;
+        font-size: x-small;
+      }
+
+      .hp-contact-title {
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
