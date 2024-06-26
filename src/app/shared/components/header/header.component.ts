@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NAVBAR_ITEMS } from 'src/assets/mocks/navbarItems';
+import { NAVBAR_ITEMS } from './navbarItems';
 
 @Component({
   selector: 'hp-header',
