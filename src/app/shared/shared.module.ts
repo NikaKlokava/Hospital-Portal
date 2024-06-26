@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StyledButtonComponent } from './components/styled-button/styled-button.component';
 import { BookAnAppointmentComponent } from './components/book-an-appointment/book-an-appointment.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { BookAnAppointmentComponent } from './components/book-an-appointment/boo
     FooterComponent,
     StyledButtonComponent,
     BookAnAppointmentComponent,
+    ContactsComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -18,6 +20,7 @@ import { BookAnAppointmentComponent } from './components/book-an-appointment/boo
     FooterComponent,
     StyledButtonComponent,
     BookAnAppointmentComponent,
+    ContactsComponent,
   ],
 })
 export class SharedModule {}

@@ -16,7 +16,7 @@
   }
 
   .hp-description-container {
-    @include flexColumnWithGap(10px);
+    @include flexColumnWithGap($gap: 10px);
     font-family: $secondary-font-family;
 
     .hp-title {
