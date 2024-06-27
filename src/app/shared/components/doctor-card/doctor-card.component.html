@@ -1,0 +1,18 @@
+<div class="hp-doctor-card-container">
+  <div class="hp-top-circle-container" *ngIf="isAdmin">
+    <img
+      src="https://raw.githubusercontent.com/NikaKlokava/hospital-portal-assets/main/svgs/star.svg"
+      alt="star_svg"
+      class="hp-star"
+    />
+  </div>
+  <img [src]="doctor.photo" alt="doctor_img" />
+
+  <div class="hp-card-description-container">
+    <h3 class="hp-doctor-name">{{ doctor.name }}</h3>
+    <p class="hp-experience">Experience: {{ doctor.experience }}</p>
+    <p class="hp-description">{{ doctor.description }}</p>
+  </div>
+
+  <p class="hp-specialization">{{ doctor.specialization | uppercase }}</p>
+</div>

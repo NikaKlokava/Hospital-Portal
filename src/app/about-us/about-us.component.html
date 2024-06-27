@@ -1,0 +1,21 @@
+<hp-page-banner
+  [pageTitle]="pageData.pageTitle"
+  [bannerImgUrl]="pageData.bannerUrl"
+/>
+<div class="hp-about-us-container">
+  <img [src]="pageData.photo" alt="doctor_img" class="hp-about-us-doctor-img" />
+  <div class="hp-content-container">
+    <p class="hp-welcome-text">{{ pageData.welcomeText }}</p>
+    <h1 class="hp-title">{{ pageData.title }}</h1>
+    <div class="hp-priorities-container">
+      <div
+        *ngFor="let priority of pageData.priorities"
+        class="hp-priority-container"
+      >
+        <div class="hp-circle"></div>
+        <p>{{ priority }}</p>
+      </div>
+    </div>
+    <p>{{ pageData.description }}</p>
+  </div>
+</div>

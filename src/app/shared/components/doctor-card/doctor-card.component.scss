@@ -1,0 +1,53 @@
+@import "../../../../styles";
+
+.hp-doctor-card-container {
+  @include flexColumnWithGap($gap: 0px);
+  position: relative;
+  width: 250px;
+
+  .hp-top-circle-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: $dark-color;
+    cursor: pointer;
+
+    .hp-star {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .hp-card-description-container {
+    @include flexColumnWithGap;
+    background-color: $brown-color;
+    padding: 8px;
+
+    p {
+      color: $primary-color;
+      font-family: $secondary-font-family;
+    }
+
+    .hp-doctor-name {
+      align-self: center;
+      color: $primary-color;
+      letter-spacing: 1px;
+    }
+  }
+
+  .hp-specialization {
+    text-align: center;
+    font-size: medium;
+    color: $accent-color;
+    padding: 5px 10px;
+    background-color: $dark-color;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
