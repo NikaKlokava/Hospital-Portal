@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NAVBAR_ITEMS } from './navbarItems';
+import { NAVBAR_ITEMS } from './navbar';
+import { NavbarItem } from './navbar.model';
 
 @Component({
   selector: 'hp-header',
@@ -7,7 +8,7 @@ import { NAVBAR_ITEMS } from './navbarItems';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  navbarItems: string[] = NAVBAR_ITEMS;
+  navbarItems:NavbarItem[] = NAVBAR_ITEMS;
 
   login() {
     console.log('login');

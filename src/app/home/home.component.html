@@ -6,7 +6,11 @@
     <p class="hp-description">
       Leading the Way in Medical Excellence and Individual approach to Everyone
     </p>
-    <hp-styled-button btnText="About us" btnType="button" />
+    <hp-styled-button
+      btnText="About us"
+      btnType="button"
+      (btnClick)="onNavigate()"
+    />
   </div>
 
   <hp-book-appointment />

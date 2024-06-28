@@ -22,7 +22,7 @@ export class AboutUsComponent {
     this.specialties = this.doctorsService.getSpecialties();
   }
 
-  onNavigate() {
+  onNavigate(): void {
     this.router.navigate(['doctors']);
   }
 }

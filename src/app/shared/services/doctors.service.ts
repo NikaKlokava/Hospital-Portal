@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Doctor } from '../components/doctor-card/doctor.model';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 

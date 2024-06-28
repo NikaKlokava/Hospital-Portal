@@ -7,6 +7,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { BookAppointmentComponent } from './components/book-appointment/book-appointment.component';
 import { DoctorCardComponent } from './components/doctor-card/doctor-card.component';
 import { PageBannerComponent } from './components/page-banner/page-banner.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { PageBannerComponent } from './components/page-banner/page-banner.compon
     DoctorCardComponent,
     PageBannerComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [
     HeaderComponent,
     FooterComponent,

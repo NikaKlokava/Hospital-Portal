@@ -6,13 +6,12 @@
       class="hp-star"
     />
   </div>
-  <img [src]="doctor.photo" alt="doctor_img" />
+  <img [src]="doctor.photo" alt="doctor_img" class="hp-doctor-photo" />
 
   <div class="hp-card-description-container">
-    <h3 class="hp-doctor-name">{{ doctor.name }}</h3>
-    <p class="hp-experience">Experience: {{ doctor.experience }}</p>
-    <p class="hp-description">{{ doctor.description }}</p>
+    <h4 class="hp-doctor-name">{{ doctor.name }}</h4>
+    <p>Experience: {{ doctor.experience }}</p>
+    <p>{{ doctor.description }}</p>
   </div>
-
   <p class="hp-specialization">{{ doctor.specialization | uppercase }}</p>
 </div>
