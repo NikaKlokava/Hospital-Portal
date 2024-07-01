@@ -8,9 +8,13 @@ import { NavbarItem } from './navbar.model';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  navbarItems:NavbarItem[] = NAVBAR_ITEMS;
+  navbarItems: NavbarItem[] = NAVBAR_ITEMS;
 
   login() {
     console.log('login');
+  }
+
+  trackByFn(_i: number, item: NavbarItem) {
+    return item.title;
   }
 }

@@ -3,13 +3,16 @@
   [bannerImgUrl]="pageData.bannerUrl"
 />
 <div class="hp-about-container">
-  <img [src]="pageData.photo" alt="doctor_img" class="hp-about-doctor-img" />
+  <img [src]="pageData.photo" alt="" class="hp-about-doctor-img" />
   <div class="hp-content-container">
     <p class="hp-welcome-text">Welcome to our Hospital!</p>
     <h1 class="hp-title">Best Care for Your Good Health</h1>
     <div class="hp-priorities-container">
       <div
-        *ngFor="let priority of pageData.priorities"
+        *ngFor="
+          let priority of pageData.priorities;
+          trackBy: trackPrioritiesByFn
+        "
         class="hp-priority-container"
       >
         <div class="hp-circle"></div>
@@ -24,7 +27,7 @@
   <h3>Best doctors of the week</h3>
   <div class="hp-top-doctors-container">
     <app-doctor-card
-      *ngFor="let topDoctor of topDoctors | async"
+      *ngFor="let topDoctor of topDoctors | async; trackBy: trackTopDoctorsByFn"
       [doctor]="topDoctor"
     />
   </div>
@@ -40,12 +43,15 @@
   <h2>Our Specialties</h2>
   <div class="hp-specialties-container">
     <div
-      *ngFor="let specialty of specialties | async"
+      *ngFor="
+        let specialty of specialties | async;
+        trackBy: trackSpecialtiesByFn
+      "
       class="hp-specialty-container"
     >
       <img
         src="https://raw.githubusercontent.com/NikaKlokava/hospital-portal-assets/main/svgs/heart.svg"
-        alt="heart_svg"
+        alt=""
       />
       <p>{{ specialty }}</p>
     </div>

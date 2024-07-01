@@ -25,4 +25,16 @@ export class AboutUsComponent {
   onNavigate(): void {
     this.router.navigate(['doctors']);
   }
+
+  trackPrioritiesByFn(_i: number, item: string) {
+    return item;
+  }
+
+  trackTopDoctorsByFn(_i: number, item: Doctor) {
+    return item.id;
+  }
+
+  trackSpecialtiesByFn(_i: number, item: string) {
+    return item;
+  }
 }

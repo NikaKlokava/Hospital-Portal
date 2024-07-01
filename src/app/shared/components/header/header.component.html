@@ -1,7 +1,7 @@
 <div class="hp-header-container">
   <div class="hp-navbar-container">
     <a
-      *ngFor="let navbarItem of navbarItems"
+      *ngFor="let navbarItem of navbarItems; trackBy: trackByFn"
       [routerLink]="[navbarItem.link]"
       routerLinkActive="router-link-active"
       class="hp-navbar-item"
