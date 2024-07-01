@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "doctors": {
+      ".read": "true",
+      ".write": "true"
+    }
+  }
+}

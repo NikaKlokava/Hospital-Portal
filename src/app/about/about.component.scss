@@ -1,0 +1,90 @@
+@import "../../styles";
+
+.hp-about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 150px;
+  padding: 30px 120px;
+  background-color: $light-grey-color;
+
+  .hp-about-doctor-img {
+    height: 300px;
+    justify-self: flex-end;
+  }
+
+  .hp-content-container {
+    @include flexColumnWithGap($gap: 10px);
+
+    .hp-welcome-text,
+    .hp-title {
+      color: $accent-color;
+      font-family: $secondary-font-family;
+      letter-spacing: 1.5px;
+    }
+
+    .hp-priorities-container {
+      display: grid;
+      align-items: center;
+      row-gap: 10px;
+      grid-template-columns: 1fr 1fr;
+
+      .hp-priority-container {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+      }
+      .hp-circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: $dark-color;
+      }
+    }
+  }
+}
+
+.hp-top-doctors-content-container {
+  @include flexColumnWithGap($gap: 30px);
+  align-items: center;
+  margin: 50px;
+  padding: 30px 70px;
+  background-color: $light-grey-color;
+
+  .hp-top-doctors-container {
+    display: flex;
+    column-gap: 40px;
+  }
+}
+
+.hp-specialties-content-container {
+  @include flexColumnWithGap($gap: 20px);
+  align-items: center;
+  padding: 30px 120px;
+
+  .hp-subtitle {
+    color: $accent-color;
+    letter-spacing: 2px;
+  }
+  .hp-specialties-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    .hp-specialty-container {
+      @include flexColumnWithGap($gap: 0px);
+      width: 100px;
+      height: 100px;
+      align-items: center;
+      justify-content: space-around;
+      border: 2px solid $light-grey-color;
+      border-radius: 10px;
+      padding: 10px 40px;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .hp-specialty-container:hover {
+      background-color: $light-grey-color;
+    }
+  }
+}

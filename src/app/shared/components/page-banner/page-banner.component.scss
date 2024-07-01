@@ -1,0 +1,15 @@
+@import "../../../../styles";
+
+.hp-banner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 120px;
+
+  .hp-banner-title {
+    font-size: 28px;
+    font-family: $secondary-font-family;
+    background-color: $light-grey-color;
+    padding: 20px;
+  }
+}
