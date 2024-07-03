@@ -26,15 +26,15 @@ export class AboutUsComponent {
     this.router.navigate(['doctors']);
   }
 
-  trackPrioritiesByFn(_i: number, item: string) {
+  trackPrioritiesByFn(_i: number, item: string): string {
     return item;
   }
 
-  trackTopDoctorsByFn(_i: number, item: Doctor) {
+  trackTopDoctorsByFn(_i: number, item: Doctor): string {
     return item.id;
   }
 
-  trackSpecialtiesByFn(_i: number, item: string) {
+  trackSpecialtiesByFn(_i: number, item: string): string {
     return item;
   }
 }

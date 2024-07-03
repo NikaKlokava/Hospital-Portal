@@ -10,11 +10,11 @@ import { NavbarItem } from './navbar.model';
 export class HeaderComponent {
   navbarItems: NavbarItem[] = NAVBAR_ITEMS;
 
-  login() {
+  login(): void {
     console.log('login');
   }
 
-  trackByFn(_i: number, item: NavbarItem) {
+  trackByFn(_i: number, item: NavbarItem): string {
     return item.title;
   }
 }

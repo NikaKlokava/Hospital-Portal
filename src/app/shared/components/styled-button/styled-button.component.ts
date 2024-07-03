@@ -10,7 +10,7 @@ export class StyledButtonComponent {
   @Input() btnType!: string;
   @Output() btnClick = new EventEmitter<any>();
 
-  onClick() {
+  onClick(): void {
     this.btnClick.emit();
   }
 }

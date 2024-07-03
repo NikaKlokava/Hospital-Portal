@@ -28,7 +28,7 @@ export class SearchBarComponent implements OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  keyupHandler() {
+  keyupHandler(): void {
     const value = this.searchQuery.value;
     if (value || value === '') {
       this.filterSubject.next(value);

@@ -23,19 +23,19 @@ export class DoctorsComponent implements OnInit {
     // this.doctorsService.loadData();
   }
 
-  onViewChange() {
+  onViewChange(): void {
     this.isCardView = !this.isCardView;
   }
 
-  onPageChange(page: number) {
+  onPageChange(page: number): void {
     // this.doctorsService.onPageChange(page);
   }
 
-  onSearchStrChange(value: string) {
+  onSearchStrChange(value: string): void {
     // this.doctorsService.onSearchStrChange(value);
   }
 
-  onSortingTypeChange() {
+  onSortingTypeChange(): void {
     //
   }
 
