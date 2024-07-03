@@ -1,10 +1,31 @@
 <hp-page-banner [pageTitle]="title" [bannerImgUrl]="url" />
 
-<div class="doctors-list-container" #target>
-  <div class="card-table-switcher-container">
+<div class="hp-search-bar-container">
+  <hp-search-bar (sendInputValue)="onSearchStrChange($event)" />
+
+  <div class="hp-sort-by-container">
+    <select
+      class="hp-select-container"
+      [formControl]="sortingType"
+      (change)="onSortingTypeChange()"
+    >
+      <option value="" hidden>Sort by:</option>
+      <option
+        *ngFor="let sortingType of sortingTypes"
+        class="hp-option-item"
+        [value]="sortingType"
+      >
+        {{ sortingType }}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="hp-doctors-list-container" #target>
+  <div class="hp-card-table-switcher-container">
     <button
       type="button"
-      class="switch-item"
+      class="hp-switch-item"
       [ngClass]="{ isActive: isCardView }"
       (click)="onViewChange()"
     >
@@ -12,7 +33,7 @@
     </button>
     <button
       type="button"
-      class="switch-item"
+      class="hp-switch-item"
       [ngClass]="{ isActive: !isCardView }"
       (click)="onViewChange()"
     >

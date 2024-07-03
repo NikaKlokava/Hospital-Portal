@@ -1,0 +1,84 @@
+@import "../../styles";
+
+.hp-search-bar-container {
+  display: flex;
+  align-items: center;
+  padding: $primary-padding;
+  column-gap: 50px;
+  background-color: $light-grey-color;
+
+  .hp-sort-by-container {
+    @include flexColumnWithGap($gap: 20px);
+
+    .hp-select-container {
+      padding: 10px;
+      background-color: $accent-color;
+      border: none;
+      color: $dark-color;
+      font-size: medium;
+      font-weight: 600;
+      font-family: $primary-font-family;
+
+      .hp-option-item {
+        background-color: $light-grey-color;
+        font-size: small;
+      }
+    }
+  }
+}
+
+.hp-doctors-list-container {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 5fr;
+  background-color: $light-grey-color;
+  padding: $primary-padding;
+
+  .hp-filter-by-container {
+    @include flexColumnWithGap($gap: 10px);
+    min-width: 150px;
+    grid-row: 1/3;
+
+    .hp-filter-by-title {
+      padding: 10px 15px;
+      background-color: $accent-color;
+    }
+
+    .hp-filter-criterion {
+      color: $brown-color;
+    }
+
+    .hp-checkboxes-container {
+      @include flexColumnWithGap;
+      padding-left: 20px;
+
+      .hp-checkbox-container {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+      }
+    }
+  }
+
+  .hp-card-table-switcher-container {
+    justify-self: flex-end;
+
+    .hp-switch-item {
+      padding: 5px 10px;
+      background-color: $brown-color;
+      border: none;
+      cursor: pointer;
+    }
+
+    .isActive {
+      color: $primary-color;
+      background-color: $accent-color;
+    }
+  }
+
+  .hp-doctors-container {
+    @include flexColumnWithGap($gap: 20px);
+    min-height: 800px;
+    align-items: center;
+  }
+}

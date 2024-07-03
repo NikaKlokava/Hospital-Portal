@@ -6,9 +6,15 @@ import { DoctorsComponent } from './doctors.component';
 import { SharedModule } from '../shared/shared.module';
 import { CardViewComponent } from './views/card-view/card-view.component';
 import { TableViewComponent } from './views/table-view/table-view.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [DoctorsComponent, CardViewComponent, TableViewComponent],
-  imports: [CommonModule, DoctorsRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    DoctorsRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ],
 })
 export class DoctorsModule {}

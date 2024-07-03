@@ -8,6 +8,8 @@ import { BookAppointmentComponent } from './components/book-appointment/book-app
 import { DoctorCardComponent } from './components/doctor-card/doctor-card.component';
 import { PageBannerComponent } from './components/page-banner/page-banner.component';
 import { RouterModule } from '@angular/router';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { RouterModule } from '@angular/router';
     ContactsComponent,
     DoctorCardComponent,
     PageBannerComponent,
+    SearchBarComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [
     HeaderComponent,
     FooterComponent,
@@ -28,6 +31,7 @@ import { RouterModule } from '@angular/router';
     ContactsComponent,
     DoctorCardComponent,
     PageBannerComponent,
+    SearchBarComponent,
   ],
 })
 export class SharedModule {}
