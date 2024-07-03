@@ -61,7 +61,7 @@ export class DoctorsService implements OnDestroy {
     this.loadSpecialties();
   }
 
-  loadSpecialties() {
+  loadSpecialties(): void {
     this.db.database.ref('specialties').once('value', (snap) => {
       this.firebaseSpecialties = snap.val();
       const specialties = Object.entries(snap.val()).map(([id, name]) => ({
@@ -125,7 +125,7 @@ export class DoctorsService implements OnDestroy {
     this.topDoctorsSubject.next(formatedDoctors);
   }
 
-  private formatData(array: Doctor[]) {
+  private formatData(array: Doctor[]): Doctor[] {
     return array.map((d) => ({
       ...d,
       specialization: get(
@@ -136,24 +136,24 @@ export class DoctorsService implements OnDestroy {
     }));
   }
 
-  onPageChange(page: number) {
+  onPageChange(page: number): void {
     this.paginationCurrentSubject.next(page);
     this.updateVisibleDoctors();
   }
 
-  onSortingTypeChange(sortingType: SortingTypes) {
+  onSortingTypeChange(sortingType: SortingTypes): void {
     this.sortingTypeSubject.next(sortingType);
     this.paginationCurrentSubject.next(0);
     this.updateVisibleDoctors();
   }
 
-  onSearchStrChange(searchQuery: string) {
+  onSearchStrChange(searchQuery: string): void {
     this.paginationCurrentSubject.next(0);
     this.searchQuerySubject.next(searchQuery);
     this.updateVisibleDoctors();
   }
 
-  onSpecialtiesChange() {
+  onSpecialtiesChange(): void {
     this.paginationCurrentSubject.next(0);
     this.updateVisibleDoctors();
   }

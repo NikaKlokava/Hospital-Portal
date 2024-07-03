@@ -23,3 +23,10 @@ export const DOCTORS_PAGE_DATA = {
   page: 'Doctors',
   bannerUrl: `url('https://raw.githubusercontent.com/NikaKlokava/hospital-portal-assets/main/images/doctors-banner.png')`,
 };
+
+export const TABLE_HEADERS = [
+  'name',
+  'specialization',
+  'experience',
+  'description',
+];

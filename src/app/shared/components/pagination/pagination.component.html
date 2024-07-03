@@ -1,0 +1,11 @@
+<div class="hp-pagination-container">
+  <button
+    type="button"
+    class="hp-pagination-item"
+    *ngFor="let pageNumber of pageNumbers"
+    [ngClass]="{ isActive: (currentPage | async) === pageNumber }"
+    (click)="changePage(pageNumber)"
+  >
+    {{ pageNumber + 1 }}
+  </button>
+</div>

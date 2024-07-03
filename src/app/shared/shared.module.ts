@@ -10,6 +10,7 @@ import { PageBannerComponent } from './components/page-banner/page-banner.compon
 import { RouterModule } from '@angular/router';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DoctorCardComponent,
     PageBannerComponent,
     SearchBarComponent,
+    PaginationComponent,
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [
@@ -32,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DoctorCardComponent,
     PageBannerComponent,
     SearchBarComponent,
+    PaginationComponent,
   ],
 })
 export class SharedModule {}

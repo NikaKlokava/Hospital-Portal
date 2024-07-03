@@ -59,5 +59,31 @@
       table
     </button>
   </div>
+  <div
+    class="hp-doctors-container"
+    *ngIf="visibleDoctors | async as visibleDoctors"
+  >
+    <div
+      class="hp-view-container"
+      *ngIf="visibleDoctors.length > 0; else showNoDoctors"
+    >
+      <hp-card-view
+        [doctors]="visibleDoctors"
+        *ngIf="isCardView; else showTable"
+      />
+      <ng-template #showTable>
+        <hp-table-view [doctors]="visibleDoctors"
+      /></ng-template>
+    </div>
+    <ng-template #showNoDoctors
+      >There is no such doctor. Try to search again.</ng-template
+    >
+
+    <hp-pagination
+      [currentPage]="puginationCurrent"
+      [totalPages]="puginationSize"
+      (pageChanged)="onPageChange($event, target)"
+    />
+  </div>
 </div>
 <hp-contacts />

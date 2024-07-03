@@ -41,8 +41,9 @@ export class DoctorsComponent implements OnInit {
     this.isCardView = !this.isCardView;
   }
 
-  onPageChange(page: number): void {
+  onPageChange(page: number, target: HTMLElement): void {
     this.doctorsService.onPageChange(page);
+    target.scrollIntoView();
   }
 
   onSearchStrChange(value: string): void {
@@ -50,7 +51,11 @@ export class DoctorsComponent implements OnInit {
   }
 
   onSortingTypeChange(): void {
-    //
+    if (this.sortingType.value) {
+      this.doctorsService.onSortingTypeChange(
+        this.sortingType.value as SortingTypes
+      );
+    }
   }
 
   onSpecialtiesChange(): void {
