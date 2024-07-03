@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Doctor } from '../shared/components/doctor-card/doctor.model';
 import { DoctorsService } from '../shared/services/doctors.service';
 import { Router } from '@angular/router';
+import { DoctorsSpecialty } from '../shared/models/doctors-specialty.model';
 
 @Component({
   selector: 'hp-about',
@@ -14,12 +15,15 @@ import { Router } from '@angular/router';
 export class AboutUsComponent {
   pageData: PageData = ABOUT_PAGE_DATA;
 
-  topDoctors: Observable<Doctor[]>;
-  specialties: Observable<string[]>;
+  topDoctors!: Observable<Doctor[]>;
+  specialties!: Observable<DoctorsSpecialty[]>;
 
-  constructor(private doctorsService: DoctorsService, private router: Router) {
-    this.topDoctors = this.doctorsService.getTopDoctors();
-    this.specialties = this.doctorsService.getSpecialties();
+  constructor(private doctorsService: DoctorsService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.doctorsService.loadData();
+    this.topDoctors = this.doctorsService.topDoctors;
+    this.specialties = this.doctorsService.visibleSpecialties;
   }
 
   onNavigate(): void {
@@ -34,7 +38,7 @@ export class AboutUsComponent {
     return item.id;
   }
 
-  trackSpecialtiesByFn(_i: number, item: string): string {
-    return item;
+  trackSpecialtiesByFn(_i: number, item: DoctorsSpecialty): string {
+    return item.id;
   }
 }
