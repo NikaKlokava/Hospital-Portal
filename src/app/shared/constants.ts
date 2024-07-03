@@ -20,8 +20,6 @@ export const ABOUT_PAGE_DATA: PageData = {
 };
 
 export const DOCTORS_PAGE_DATA = {
-  doctors: {
-    page: 'Doctors',
-    bannerUrl: `url('https://raw.githubusercontent.com/NikaKlokava/hospital-portal-assets/main/images/doctors-banner.png')`,
-  },
+  page: 'Doctors',
+  bannerUrl: `url('https://raw.githubusercontent.com/NikaKlokava/hospital-portal-assets/main/images/doctors-banner.png')`,
 };

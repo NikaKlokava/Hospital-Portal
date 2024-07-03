@@ -1,0 +1,23 @@
+<hp-page-banner [pageTitle]="title" [bannerImgUrl]="url" />
+
+<div class="doctors-list-container" #target>
+  <div class="card-table-switcher-container">
+    <button
+      type="button"
+      class="switch-item"
+      [ngClass]="{ isActive: isCardView }"
+      (click)="onViewChange()"
+    >
+      card
+    </button>
+    <button
+      type="button"
+      class="switch-item"
+      [ngClass]="{ isActive: !isCardView }"
+      (click)="onViewChange()"
+    >
+      table
+    </button>
+  </div>
+</div>
+<hp-contacts />
