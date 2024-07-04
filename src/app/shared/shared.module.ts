@@ -8,9 +8,7 @@ import { BookAppointmentComponent } from './components/book-appointment/book-app
 import { DoctorCardComponent } from './components/doctor-card/doctor-card.component';
 import { PageBannerComponent } from './components/page-banner/page-banner.component';
 import { RouterModule } from '@angular/router';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +19,6 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     ContactsComponent,
     DoctorCardComponent,
     PageBannerComponent,
-    SearchBarComponent,
-    PaginationComponent,
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [
@@ -33,8 +29,6 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     ContactsComponent,
     DoctorCardComponent,
     PageBannerComponent,
-    SearchBarComponent,
-    PaginationComponent,
   ],
 })
 export class SharedModule {}

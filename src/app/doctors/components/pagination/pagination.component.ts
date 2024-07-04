@@ -11,19 +11,6 @@ export class PaginationComponent {
   @Input() totalPages!: Observable<number>;
   @Output() pageChanged: EventEmitter<number> = new EventEmitter();
 
-  subsription!: Subscription;
-  pageNumbers!: number[];
-
-  ngOnChanges(): void {
-    this.subsription = this.totalPages.subscribe(
-      (data) => (this.pageNumbers = Array.from({ length: data }, (_, i) => i))
-    );
-  }
-
-  ngOnDestroy(): void {
-    this.subsription.unsubscribe();
-  }
-
   changePage(page: number): void {
     this.pageChanged.emit(page);
   }

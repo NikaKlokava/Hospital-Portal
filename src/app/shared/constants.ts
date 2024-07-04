@@ -30,3 +30,6 @@ export const TABLE_HEADERS = [
   'experience',
   'description',
 ];
+
+export const DOCTORS_PER_PAGE = 6;
+export const UNKNOWN_SPECIALITY = 'unknown';

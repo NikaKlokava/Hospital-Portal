@@ -3,9 +3,9 @@ import { ABOUT_PAGE_DATA } from '../shared/constants';
 import { PageData } from './about.model';
 import { Observable } from 'rxjs';
 import { Doctor } from '../shared/components/doctor-card/doctor.model';
-import { DoctorsService } from '../shared/services/doctors.service';
 import { Router } from '@angular/router';
 import { DoctorsSpecialty } from '../shared/models/doctors-specialty.model';
+import { TopDoctorsService } from './services/top-doctors.service';
 
 @Component({
   selector: 'hp-about',
@@ -18,12 +18,15 @@ export class AboutUsComponent {
   topDoctors!: Observable<Doctor[]>;
   specialties!: Observable<DoctorsSpecialty[]>;
 
-  constructor(private doctorsService: DoctorsService, private router: Router) {}
+  constructor(
+    private topDoctorsService: TopDoctorsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.doctorsService.loadData();
-    this.topDoctors = this.doctorsService.topDoctors;
-    this.specialties = this.doctorsService.visibleSpecialties;
+    this.topDoctorsService.loadData();
+    this.topDoctors = this.topDoctorsService.topDoctors;
+    this.specialties = this.topDoctorsService.visibleSpecialties;
   }
 
   onNavigate(): void {

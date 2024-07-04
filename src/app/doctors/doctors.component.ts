@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { DoctorsService } from '../shared/services/doctors.service';
 import { DOCTORS_PAGE_DATA } from '../shared/constants';
 import { SortingTypes } from '../shared/models/sorting-types.model';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Doctor } from '../shared/components/doctor-card/doctor.model';
 import { DoctorsSpecialty } from '../shared/models/doctors-specialty.model';
+import { DoctorsService } from './services/doctors.service';
 
 @Component({
   selector: 'hp-doctors',
@@ -19,18 +19,18 @@ export class DoctorsComponent implements OnInit {
   sortingTypes = Object.keys(SortingTypes);
   sortingType = new FormControl('');
 
-  visibleDoctors: Observable<Doctor[]>;
-  visibleSpecialties: Observable<DoctorsSpecialty[]>;
-  puginationSize: Observable<number>;
-  puginationCurrent: Observable<number>;
+  visibleDoctors!: Observable<Doctor[]>;
+  visibleSpecialties!: Observable<DoctorsSpecialty[]>;
+  paginationSize!: Observable<number>;
+  paginationCurrent!: Observable<number>;
 
   isCardView: boolean = true;
 
   constructor(private doctorsService: DoctorsService) {
     this.visibleDoctors = this.doctorsService.visibleDoctors;
     this.visibleSpecialties = this.doctorsService.visibleSpecialties;
-    this.puginationSize = this.doctorsService.paginationSize;
-    this.puginationCurrent = this.doctorsService.paginationCurrent;
+    this.paginationSize = this.doctorsService.paginationSize;
+    this.paginationCurrent = this.doctorsService.paginationCurrent;
   }
 
   ngOnInit(): void {
@@ -42,23 +42,23 @@ export class DoctorsComponent implements OnInit {
   }
 
   onPageChange(page: number, target: HTMLElement): void {
-    this.doctorsService.onPageChange(page);
+    this.doctorsService.handlePageChange(page);
     target.scrollIntoView();
   }
 
   onSearchStrChange(value: string): void {
-    this.doctorsService.onSearchStrChange(value);
+    this.doctorsService.searchStrChange(value);
   }
 
   onSortingTypeChange(): void {
     if (this.sortingType.value) {
-      this.doctorsService.onSortingTypeChange(
+      this.doctorsService.sortingTypeChange(
         this.sortingType.value as SortingTypes
       );
     }
   }
 
   onSpecialtiesChange(): void {
-    this.doctorsService.onSpecialtiesChange();
+    this.doctorsService.specialtiesChange();
   }
 }
