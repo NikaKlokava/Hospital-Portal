@@ -22,9 +22,6 @@ export class DoctorsService {
   );
   visibleSpecialties = this.visibleSpecialtiesSubject.asObservable();
 
-  private topDoctorsSubject = new BehaviorSubject<Doctor[]>([]);
-  topDoctors = this.topDoctorsSubject.asObservable();
-
   private searchQuerySubject = new BehaviorSubject<string>('');
 
   private paginationSizeSubject = new BehaviorSubject<number>(0);

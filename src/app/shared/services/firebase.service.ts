@@ -40,7 +40,6 @@ export class FirebaseService {
     doctors: Doctor[],
     specialties: FirebaseSpecialties
   ): Doctor[] {
-    console.log({ specialties });
     return doctors.map((d) => ({
       ...d,
       specialization: get(specialties, d.specialization, UNKNOWN_SPECIALITY),
