@@ -1,0 +1,16 @@
+<div class="hp-statistics-tab-container">
+  <ul>
+    <li *ngFor="let tab of tabs">
+      <button
+        (click)="selectTab(tab)"
+        class="hp-tab-btn"
+        [ngClass]="{ active: tab.active }"
+      >
+        {{ tab.tabTitle }}
+      </button>
+    </li>
+  </ul>
+  <div class="hp-statistics-tab-content">
+    <ng-content></ng-content>
+  </div>
+</div>
