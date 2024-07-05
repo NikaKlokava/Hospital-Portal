@@ -7,6 +7,8 @@ $light-grey-color: #d5d6d2;
 $primary-font-family: "Domine", sans-serif;
 $secondary-font-family: "Yeseva One", sans-serif;
 
+$primary-padding: 30px 120px;
+
 @font-face {
   font-family: "Domine";
   src: url("assets/fonts/Domine/Domine-VariableFont_wght.ttf")
@@ -36,6 +38,10 @@ $secondary-font-family: "Yeseva One", sans-serif;
   row-gap: $gap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
   font-family: $primary-font-family;
@@ -57,4 +63,10 @@ p {
 
 a {
   text-decoration: none;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: $accent-color;
 }

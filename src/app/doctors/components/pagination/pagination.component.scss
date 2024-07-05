@@ -1,0 +1,22 @@
+@import "../../../../styles";
+
+.hp-pagination-container {
+  display: flex;
+  column-gap: 20px;
+
+  .hp-pagination-item {
+    border: none;
+    background-color: $dark-color;
+    color: $primary-color;
+    padding: 10px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  .hp-pagination-item:hover {
+    color: $accent-color;
+  }
+
+  .isActive {
+    color: $accent-color;
+  }
+}

@@ -1,0 +1,15 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let tableHeader of tableHeaders">{{ tableHeader }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doctor of doctors">
+      <td>{{ doctor.name }}</td>
+      <td>{{ doctor.specialization }}</td>
+      <td>{{ doctor.experience }} years</td>
+      <td>{{ doctor.description }}</td>
+    </tr>
+  </tbody>
+</table>

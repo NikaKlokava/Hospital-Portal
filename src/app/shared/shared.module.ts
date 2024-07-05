@@ -8,6 +8,7 @@ import { BookAppointmentComponent } from './components/book-appointment/book-app
 import { DoctorCardComponent } from './components/doctor-card/doctor-card.component';
 import { PageBannerComponent } from './components/page-banner/page-banner.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { RouterModule } from '@angular/router';
     DoctorCardComponent,
     PageBannerComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [
     HeaderComponent,
     FooterComponent,
