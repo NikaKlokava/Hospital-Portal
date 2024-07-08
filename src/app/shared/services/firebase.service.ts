@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Doctor } from '../components/doctor-card/doctor.model';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { UNKNOWN_SPECIALITY } from '../constants';
 import { get } from 'lodash';
 import { DoctorsSpecialty } from '../models/doctors-specialty.model';
