@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalService } from '../modal/modal.service';
 import { Modal } from '../modal/modal.model';
@@ -9,11 +9,11 @@ import { DoctorsService } from 'src/app/doctors/services/doctors.service';
 import { WORKING_HOURS } from '../../constants';
 
 @Component({
-  selector: 'app-appointment-form',
+  selector: 'hp-appointment-form',
   templateUrl: './appointment-form.component.html',
   styleUrls: ['./appointment-form.component.scss'],
 })
-export class AppointmentFormComponent implements OnInit {
+export class AppointmentFormComponent {
   startDate!: string;
   hours = WORKING_HOURS;
 
@@ -38,14 +38,11 @@ export class AppointmentFormComponent implements OnInit {
   ) {
     this.doctorsService.loadData();
     this.doctors = this.doctorsService.visibleDoctors;
-  }
-
-  ngOnInit(): void {
     this.startDate = new Date().toISOString().split('T')[0];
   }
 
-  onClose() {
-    this.modalService.close('appointment-form');
+  onClose(): void {
+    this.modalService.close(Modal.appointmentForm);
     this.resetForm();
   }
 
@@ -65,10 +62,11 @@ export class AppointmentFormComponent implements OnInit {
     this.appointmentForm.controls.comments.reset();
   }
 
-  checkIfTouched(field: string) {
+  checkIfTouched(field: string): boolean {
     return (
-      this.appointmentForm.get(field)?.invalid &&
-      this.appointmentForm.get(field)?.touched
+      (this.appointmentForm.get(field)?.invalid &&
+        this.appointmentForm.get(field)?.touched) ||
+      false
     );
   }
 

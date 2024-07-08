@@ -1,10 +1,10 @@
 @import "../../../../styles";
 
-.login-form {
+.hp-login-form {
   @include flexColumnWithGap($gap: 20px);
   align-items: center;
 
-  .login-btn-container {
+  .hp-login-btn-container {
     display: flex;
     justify-content: space-around;
     border-radius: 5px;
@@ -13,12 +13,12 @@
     padding: 10px;
     transition: 0.2s ease-in-out;
 
-    .login-img {
+    .hp-login-img {
       height: 30px;
       cursor: pointer;
     }
 
-    .login-btn {
+    .hp-login-btn {
       background-color: transparent;
       border: none;
       font-family: $primary-font-family;
@@ -26,7 +26,7 @@
     }
   }
 
-  .login-btn-container:hover {
+  .hp-login-btn-container:hover {
     background-color: $accent-color;
   }
 }

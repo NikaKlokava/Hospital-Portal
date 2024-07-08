@@ -3,19 +3,19 @@
 :host {
   @include flexColumnWithGap($gap: 20px);
 
-  .appointment-form-header {
+  .hp-appointment-form-header {
     color: $accent-color;
     align-self: center;
   }
 
-  .appointment-form {
+  .hp-appointment-form {
     @include flexColumnWithGap($gap: 15px);
 
-    .input-container {
+    .hp-input-container {
       display: flex;
       justify-content: space-between;
 
-      .label-container {
+      .hp-label-container {
         min-height: 40px;
       }
 
@@ -23,7 +23,7 @@
         font-weight: 400;
       }
 
-      .input {
+      .hp-input {
         height: 30px;
         width: 60%;
         border: none;
@@ -39,13 +39,13 @@
         margin: 0;
       }
 
-      .hours-container {
+      .hp-hours-container {
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
         margin-left: 30px;
 
-        .hour-item {
+        .hp-hour-item {
           padding: 10px;
           border-radius: 10px;
           background-color: $brown-color;
@@ -53,7 +53,7 @@
           cursor: pointer;
         }
 
-        .hour-item:hover {
+        .hp-hour-item:hover {
           color: $accent-color;
         }
       }

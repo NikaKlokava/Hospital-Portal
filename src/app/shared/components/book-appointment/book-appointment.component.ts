@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/auth.service';
 import { ModalService } from '../modal/modal.service';
 import { Subscription } from 'rxjs';
+import { Modal } from '../modal/modal.model';
 
 @Component({
   selector: 'hp-book-appointment',
@@ -34,11 +35,11 @@ export class BookAppointmentComponent implements OnInit, OnDestroy {
       );
   }
 
-  openModal() {
+  openModal(): void {
     if (this.isUserExist) {
-      this.modalService.open('appointment-form');
+      this.modalService.open(Modal.appointmentForm);
     } else {
-      this.modalService.open('login-form');
+      this.modalService.open(Modal.loginForm);
     }
   }
 }

@@ -4,7 +4,7 @@
   align-self: center;
   justify-self: flex-end;
 
-  .book-an-appointment-container {
+  .hp-book-an-appointment-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,12 +25,12 @@
 
     cursor: pointer;
 
-    .calendar-svg {
+    .hp-calendar-svg {
       height: 40px;
     }
   }
 
-  .book-an-appointment-container:hover {
+  .hp-book-an-appointment-container:hover {
     box-shadow: 1px 1px 10px 10px $brown-color;
     -webkit-animation: none;
     -moz-animation: none;

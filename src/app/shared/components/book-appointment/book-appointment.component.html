@@ -1,20 +1,20 @@
 <button
   *ngIf="!isAdmin"
-  class="book-an-appointment-container"
+  class="hp-book-an-appointment-container"
   (click)="openModal()"
 >
   <p>Book an Appointment</p>
   <img
-    class="calendar-svg"
+    class="hp-calendar-svg"
     src="https://raw.githubusercontent.com/NikaKlokava/hospital-portal-assets/main/svgs/calendar.svg"
     alt="calendar_svg"
   />
 </button>
 
 <hp-modal id="login-form">
-  <app-login />
+  <hp-login></hp-login>
 </hp-modal>
 
 <hp-modal id="appointment-form">
-  <app-appointment-form></app-appointment-form>
+  <hp-appointment-form></hp-appointment-form>
 </hp-modal>

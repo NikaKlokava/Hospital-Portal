@@ -1,6 +1,6 @@
-<h3 class="appointment-form-header">Book an appointment now!</h3>
+<h3 class="hp-appointment-form-header">Book an appointment now!</h3>
 <form
-  class="appointment-form"
+  class="hp-appointment-form"
   [formGroup]="appointmentForm"
   (ngSubmit)="saveChanges($event)"
 >
@@ -11,8 +11,8 @@
     formControlName="date"
   />
 
-  <div class="input-container">
-    <div class="label-container">
+  <div class="hp-input-container">
+    <div class="hp-label-container">
       <label for="hours">Time:</label>
       <small
         *ngIf="checkIfTouched('time')"
@@ -22,7 +22,7 @@
       </small>
     </div>
 
-    <select class="input" formControlName="time" id="hours">
+    <select class="hp-input" formControlName="time" id="hours">
       <option [value]="hour" *ngFor="let hour of hours">{{ hour }}</option>
     </select>
   </div>
@@ -34,9 +34,9 @@
     formControlName="birthDate"
   />
 
-  <div class="input-container">
+  <div class="hp-input-container">
     <h4>Are you a new patient?</h4>
-    <div class="radio-btns-container">
+    <div class="hp-radio-btns-container">
       <input
         type="radio"
         id="yes"
@@ -57,8 +57,8 @@
     </div>
   </div>
 
-  <div class="input-container">
-    <div class="label-container">
+  <div class="hp-input-container">
+    <div class="hp-label-container">
       <label for="doctors">Doctor:</label>
       <small
         *ngIf="checkIfTouched('doctor')"
@@ -68,7 +68,7 @@
       </small>
     </div>
 
-    <select id="doctors" class="input" formControlName="doctor">
+    <select id="doctors" class="hp-input" formControlName="doctor">
       <option hidden></option>
       <option *ngFor="let doctor of doctors | async" [value]="doctor.name">
         {{ doctor.name }}
@@ -76,8 +76,8 @@
     </select>
   </div>
 
-  <div class="input-container">
-    <div class="label-container">
+  <div class="hp-input-container">
+    <div class="hp-label-container">
       <label for="comments">Comments:</label>
       <small
         *ngIf="checkIfTouched('comments')"
@@ -93,7 +93,7 @@
     ></textarea>
   </div>
 
-  <div class="input-container">
+  <div class="hp-input-container">
     <hp-styled-button
       [btnText]="'Cancel'"
       [btnType]="'button'"

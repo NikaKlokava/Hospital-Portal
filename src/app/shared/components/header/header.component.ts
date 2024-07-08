@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavbarItem } from './navbar.model';
 import { AuthService } from 'src/app/core/auth.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ModalService } from '../modal/modal.service';
 import * as firebase from 'firebase/auth';
+import { Modal } from '../modal/modal.model';
 
 @Component({
   selector: 'hp-header',
@@ -28,8 +28,8 @@ export class HeaderComponent {
     });
   }
 
-  login(id: string) {
-    this.modalService.open(id);
+  login(): void {
+    this.modalService.open(Modal.loginForm);
   }
 
   logout(): void {
@@ -37,11 +37,7 @@ export class HeaderComponent {
     this.router.navigate(['home']);
   }
 
-  onNavigate() {
+  onNavigate(): void {
     this.router.navigate(['profile']);
-  }
-
-  trackByFn(_i: number, item: NavbarItem): string {
-    return item.title;
   }
 }

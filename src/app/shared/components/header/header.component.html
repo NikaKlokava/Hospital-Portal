@@ -1,54 +1,56 @@
-<div class="header-container">
-  <div class="links-container">
-    <a
-      [routerLink]="['home']"
-      routerLinkActive="router-link-active"
-      class="link-item"
-      >Home</a
+<div class="hp-header-container">
+  <hp-loader>
+    <div class="hp-links-container">
+      <a
+        [routerLink]="['home']"
+        routerLinkActive="router-link-active"
+        class="hp-link-item"
+        >Home</a
+      >
+      <a
+        [routerLink]="['about']"
+        routerLinkActive="router-link-active"
+        class="hp-link-item"
+        >About us</a
+      >
+      <a
+        [routerLink]="['doctors']"
+        routerLinkActive="router-link-active"
+        class="hp-link-item"
+        >Doctors</a
+      >
+      <a
+        *ngIf="isAdmin"
+        [routerLink]="['statistics']"
+        routerLinkActive="router-link-active"
+        class="hp-link-item"
+        >Statistics</a
+      >
+    </div>
+    <div
+      class="hp-logout-btns-container"
+      *ngIf="userInfo | async as user; else showLogin"
     >
-    <a
-      [routerLink]="['about']"
-      routerLinkActive="router-link-active"
-      class="link-item"
-      >About us</a
-    >
-    <a
-      [routerLink]="['doctors']"
-      routerLinkActive="router-link-active"
-      class="link-item"
-      >Doctors</a
-    >
-    <a
-      *ngIf="isAdmin"
-      [routerLink]="['statistics']"
-      routerLinkActive="router-link-active"
-      class="link-item"
-      >Statistics</a
-    >
-  </div>
-  <div
-    class="logout-btns-container"
-    *ngIf="userInfo | async as user; else showLogin"
-  >
-    <button *ngIf="!isAdmin" class="profile-btn" (click)="onNavigate()">
-      My Profile
-    </button>
+      <button *ngIf="!isAdmin" class="hp-profile-btn" (click)="onNavigate()">
+        My Profile
+      </button>
 
-    <hp-styled-button
-      class="logout-btn"
-      [btnText]="'Logout'"
-      [btnType]="'button'"
-      (btnClick)="logout()"
-    ></hp-styled-button>
-  </div>
-  <ng-template #showLogin>
-    <hp-styled-button
-      [btnType]="'text'"
-      [btnText]="'Login'"
-      (btnClick)="login('login-form')"
-    />
-    <hp-modal id="login-form">
-      <app-login />
-    </hp-modal>
-  </ng-template>
+      <hp-styled-button
+        class="hp-logout-btn"
+        [btnText]="'Logout'"
+        [btnType]="'button'"
+        (btnClick)="logout()"
+      ></hp-styled-button>
+    </div>
+    <ng-template #showLogin>
+      <hp-styled-button
+        [btnType]="'text'"
+        [btnText]="'Login'"
+        (btnClick)="login()"
+      />
+      <hp-modal id="login-form">
+        <hp-login />
+      </hp-modal>
+    </ng-template>
+  </hp-loader>
 </div>

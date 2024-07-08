@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import * as firebase from 'firebase/auth';
-import { BehaviorSubject, finalize, Observable, tap } from 'rxjs';
-import { LoaderService } from '../shared/components/loader/loader.service';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -12,12 +12,9 @@ export class AuthService {
 
   isAdmin: Observable<boolean> = this.isAdminSubject.asObservable();
 
-  constructor(
-    private auth: AngularFireAuth,
-    private loaderService: LoaderService
-  ) {
+  constructor(private auth: AngularFireAuth) {
     this.auth.user.subscribe((userData) =>
-      userData?.uid === 'IeO6XjdtI7QI5OQoyioIHfOZgGF2'
+      userData?.uid === environment.adminUid
         ? this.isAdminSubject.next(true)
         : this.isAdminSubject.next(false)
     );

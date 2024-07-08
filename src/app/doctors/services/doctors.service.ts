@@ -9,6 +9,7 @@ import {
   FirebaseSpecialties,
 } from 'src/app/shared/services/firebase.service';
 import { SortingTypes } from 'src/app/shared/models/sorting-types.model';
+import { LoaderService } from 'src/app/shared/components/loader/loader.service';
 
 @Injectable({
   providedIn: 'root',
@@ -36,12 +37,16 @@ export class DoctorsService {
   private firebaseDoctors: Doctor[];
   private firebaseSpecialties: FirebaseSpecialties;
 
-  constructor(private fb: FirebaseService) {
+  constructor(
+    private fb: FirebaseService,
+    private loaderService: LoaderService
+  ) {
     this.firebaseDoctors = [];
     this.firebaseSpecialties = {};
   }
 
   loadData(): void {
+    this.loaderService.loadingOn();
     this.fb.loadData();
     this.fb.firebaseSpecialties.subscribe((firebaseSpecialties) => {
       this.firebaseSpecialties = firebaseSpecialties;
@@ -75,6 +80,7 @@ export class DoctorsService {
     );
 
     this.visibleDoctorsSubject.next(mappedSpecialties);
+    this.loaderService.loadingOff();
   }
 
   handlePageChange(page: number): void {

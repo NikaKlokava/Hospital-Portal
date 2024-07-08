@@ -4,7 +4,7 @@ import { ModalService } from '../modal/modal.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-login',
+  selector: 'hp-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
@@ -17,7 +17,7 @@ export class LoginComponent implements OnDestroy {
   ) {}
 
   ngOnDestroy(): void {
-    // this.subscription && this.subscription.unsubscribe();
+    this.subscription && this.subscription.unsubscribe();
   }
 
   login(): void {

@@ -1,23 +1,35 @@
 @import "../../../../styles";
 
-.loader-container {
-  z-index: 33;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  align-self: center;
+.hp-loader-container {
+  .hp-loader-wrapper {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-  .loader-speeding-wheel {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 100px;
-    border: 5px solid $accent-color;
-    border-radius: 50%;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    animation: load-spin 500ms infinite linear;
+    .hp-loader-speeding-wheel {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 100px;
+      border: 5px solid $accent-color;
+      border-radius: 50%;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      animation: load-spin 500ms infinite linear;
+    }
+  }
+
+  .hp-loader-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $dark-color;
+    opacity: 0.8;
+    z-index: 5;
   }
 }
 

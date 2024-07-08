@@ -7,6 +7,7 @@ import {
 } from '@angular/router';
 import { map } from 'rxjs';
 import { AuthService } from './auth.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class AdminGuard {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return this.authService.getAuthInfo().pipe(
       map((userInfo) => {
-        if (userInfo && userInfo.uid === 'IeO6XjdtI7QI5OQoyioIHfOZgGF2') {
+        if (userInfo && userInfo.uid === environment.adminUid) {
           return true;
         } else {
           this.router.navigate(['home']);

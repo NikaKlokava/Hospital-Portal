@@ -7,7 +7,7 @@ import { Appointment } from '../shared/components/appointment-form/appointment.m
 import * as firebase from 'firebase/auth';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'hp-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
 
     this.userInfo = this.authService.getAuthInfo();
   }
-  onDelete(id: string) {
+  onDelete(id: string): void {
     confirm('Do you really want to delete this appointment?') &&
       this.appointmentsService.deleteAppointment(id);
   }
