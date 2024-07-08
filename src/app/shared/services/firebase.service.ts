@@ -24,7 +24,7 @@ export class FirebaseService {
     this.loadDoctorsData();
   }
 
-  private loadDoctorsData(): void {
+  loadDoctorsData(): void {
     this.firebaseDoctors = this.db
       .list('/doctors')
       .valueChanges() as Observable<Doctor[]>;
@@ -34,6 +34,10 @@ export class FirebaseService {
     this.firebaseSpecialties = this.db
       .object('/specialties')
       .valueChanges() as Observable<FirebaseSpecialties>;
+  }
+
+  changeTopDoctors(doctor: Doctor): void {
+    this.db.database.ref(`doctors/${doctor.id}/top`).set(!doctor.top);
   }
 
   formatDoctorsSpeciality(

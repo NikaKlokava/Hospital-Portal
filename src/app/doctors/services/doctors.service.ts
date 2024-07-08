@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { filterDoctors } from './doctors.utils';
 import { Doctor } from 'src/app/shared/components/doctor-card/doctor.model';

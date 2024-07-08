@@ -5,8 +5,8 @@ import { Modal } from '../modal/modal.model';
 import { Observable } from 'rxjs';
 import { Doctor } from '../doctor-card/doctor.model';
 import { AppointmentsService } from './appointments.service';
-import { DoctorsService } from 'src/app/doctors/services/doctors.service';
 import { WORKING_HOURS } from '../../constants';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'hp-appointment-form',
@@ -33,11 +33,11 @@ export class AppointmentFormComponent {
 
   constructor(
     private appointmentsService: AppointmentsService,
-    private doctorsService: DoctorsService,
+    private firebaseServie: FirebaseService,
     private modalService: ModalService
   ) {
-    this.doctorsService.loadData();
-    this.doctors = this.doctorsService.visibleDoctors;
+    this.firebaseServie.loadData();
+    this.doctors = this.firebaseServie.firebaseDoctors;
     this.startDate = new Date().toISOString().split('T')[0];
   }
 

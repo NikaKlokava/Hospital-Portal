@@ -1,7 +1,11 @@
 <table>
   <thead>
     <tr>
-      <th *ngFor="let tableHeader of tableHeaders">{{ tableHeader }}</th>
+      <th>name</th>
+      <th>specialization</th>
+      <th>experience</th>
+      <th *ngIf="isAdmin">Top</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
@@ -9,6 +13,14 @@
       <td>{{ doctor.name }}</td>
       <td>{{ doctor.specialization }}</td>
       <td>{{ doctor.experience }} years</td>
+      <td *ngIf="isAdmin">
+        <input
+          type="checkbox"
+          [value]="doctor.top"
+          [checked]="doctor.top"
+          (change)="onTopDoctorChange(doctor)"
+        />
+      </td>
       <td>{{ doctor.description }}</td>
     </tr>
   </tbody>
