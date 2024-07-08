@@ -1,22 +1,44 @@
 @import "../../../../styles";
 
-.hp-header-container {
+.header-container {
   @include containerStyle;
   justify-content: space-between;
 
-  .hp-navbar-container {
+  .profile-btn {
+    border: none;
+    background-color: transparent;
+    color: $primary-color;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-family: $primary-font-family;
+  }
+  .profile-btn:hover {
+    color: $accent-color;
+  }
+
+  .links-container {
     display: flex;
     column-gap: 20px;
 
-    .hp-navbar-item {
+    .link-item {
+      text-decoration: none;
       color: $primary-color;
       font-size: 14px;
       transition: 0.3s ease-in-out;
       cursor: pointer;
     }
 
-    .hp-navbar-item:hover {
+    .link-item:hover {
       color: $accent-color;
     }
+
+    .link-item.router-link-active {
+      color: $accent-color;
+    }
+  }
+
+  .logout-btns-container {
+    display: flex;
+    column-gap: 30px;
   }
 }

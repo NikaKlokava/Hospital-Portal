@@ -1,0 +1,108 @@
+<h3 class="appointment-form-header">Book an appointment now!</h3>
+<form
+  class="appointment-form"
+  [formGroup]="appointmentForm"
+  (ngSubmit)="saveChanges($event)"
+>
+  <hp-custom-form-control
+    [formTitle]="'Date:'"
+    [inputId]="'date'"
+    [inputType]="'date'"
+    formControlName="date"
+  />
+
+  <div class="input-container">
+    <div class="label-container">
+      <label for="hours">Time:</label>
+      <small
+        *ngIf="checkIfTouched('time')"
+        [class.valid-message]="ifInvalid('time', 'required')"
+      >
+        * required
+      </small>
+    </div>
+
+    <select class="input" formControlName="time" id="hours">
+      <option [value]="hour" *ngFor="let hour of hours">{{ hour }}</option>
+    </select>
+  </div>
+
+  <hp-custom-form-control
+    [formTitle]="'Date of birth:'"
+    [inputId]="'birth'"
+    [inputType]="'date'"
+    formControlName="birthDate"
+  />
+
+  <div class="input-container">
+    <h4>Are you a new patient?</h4>
+    <div class="radio-btns-container">
+      <input
+        type="radio"
+        id="yes"
+        name="newPatient"
+        value="yes"
+        formControlName="newPatient"
+        checked="yes"
+      />
+      <label for="yes">Yes</label>
+      <input
+        type="radio"
+        id="no"
+        value="no"
+        name="newPatient"
+        formControlName="newPatient"
+      />
+      <label for="no">No</label>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <div class="label-container">
+      <label for="doctors">Doctor:</label>
+      <small
+        *ngIf="checkIfTouched('doctor')"
+        [class.valid-message]="ifInvalid('doctor', 'required')"
+      >
+        * required
+      </small>
+    </div>
+
+    <select id="doctors" class="input" formControlName="doctor">
+      <option hidden></option>
+      <option *ngFor="let doctor of doctors | async" [value]="doctor.name">
+        {{ doctor.name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="input-container">
+    <div class="label-container">
+      <label for="comments">Comments:</label>
+      <small
+        *ngIf="checkIfTouched('comments')"
+        [class.valid-message]="ifInvalid('comments', 'required')"
+      >
+        * required
+      </small>
+    </div>
+    <textarea
+      id="comments"
+      placeholder="Add your comments"
+      formControlName="comments"
+    ></textarea>
+  </div>
+
+  <div class="input-container">
+    <hp-styled-button
+      [btnText]="'Cancel'"
+      [btnType]="'button'"
+      (btnClick)="onClose()"
+    />
+    <hp-styled-button
+      [btnText]="'Submit'"
+      [btnType]="'submit'"
+      [class.disabled]="appointmentForm.invalid"
+    />
+  </div>
+</form>

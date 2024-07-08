@@ -1,0 +1,43 @@
+<div class="profile-page-container">
+  <div class="profile-header-container">
+    <div *ngIf="userInfo | async as user">
+      <h3>Welcome, {{ user.displayName }}!</h3>
+    </div>
+
+    <hp-book-appointment></hp-book-appointment>
+  </div>
+
+  <hp-loader>
+    <div
+      class="appintments-container"
+      *ngIf="appointmentsData | async as appointments"
+    >
+      <div *ngIf="appointments.length === 0; else showAppointments">
+        There are no appointments right now. Feel free to create new!
+      </div>
+      <ng-template #showAppointments>
+        <div
+          class="appointment-item-container"
+          *ngFor="let appointment of appointments"
+          [appBoxColor]="appointment.date"
+        >
+          <div class="appointment-user-data-container">
+            <p>Birth: {{ appointment.birthDate }}</p>
+            <small>Comments: {{ appointment.comments }}</small>
+          </div>
+          <div class="vertical-line"></div>
+          <div class="appointment-data-container">
+            <p>Date: {{ appointment.date }}</p>
+            <p>Time: {{ appointment.time }}</p>
+            <p>Doctor: {{ appointment.doctor }}</p>
+          </div>
+          <hp-styled-button
+            [btnText]="'delete'"
+            [btnType]="'button'"
+            (btnClick)="onDelete(appointment.id)"
+          />
+        </div>
+      </ng-template>
+    </div>
+  </hp-loader>
+</div>

@@ -13,6 +13,7 @@
     .hp-select-container {
       padding: 10px;
       background-color: $accent-color;
+      border-radius: 10px;
       border: none;
       color: $dark-color;
       font-size: medium;
@@ -41,6 +42,7 @@
 
     .hp-filter-by-title {
       padding: 10px 15px;
+      border-radius: 10px;
       background-color: $accent-color;
     }
 
@@ -69,6 +71,17 @@
       border: none;
       cursor: pointer;
     }
+
+    .hp-switch-card {
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+
+    .hp-switch-table {
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
     .isActive {
       color: $primary-color;
       background-color: $accent-color;

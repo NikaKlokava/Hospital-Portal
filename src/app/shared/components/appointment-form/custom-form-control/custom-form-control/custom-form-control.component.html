@@ -1,0 +1,16 @@
+<form class="input-container">
+  <div class="label-container">
+    <label [for]="inputId">{{ formTitle }}</label>
+    <small
+      [class.valid-message]="this.customFormControl.errors?.['required']"
+      *ngIf="this.customFormControl.invalid && this.customFormControl.touched"
+      >* required</small
+    >
+  </div>
+  <input
+    [type]="inputType"
+    [id]="inputId"
+    class="input"
+    [formControl]="customFormControl"
+  />
+</form>

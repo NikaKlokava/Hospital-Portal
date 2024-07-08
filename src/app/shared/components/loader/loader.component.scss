@@ -1,0 +1,29 @@
+@import "../../../../styles";
+
+.loader-container {
+  z-index: 33;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-self: center;
+
+  .loader-speeding-wheel {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 5px solid $accent-color;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: load-spin 500ms infinite linear;
+  }
+}
+
+@keyframes load-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

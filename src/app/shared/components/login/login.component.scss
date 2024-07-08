@@ -1,0 +1,32 @@
+@import "../../../../styles";
+
+.login-form {
+  @include flexColumnWithGap($gap: 20px);
+  align-items: center;
+
+  .login-btn-container {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    background-color: $primary-color;
+    min-width: 200px;
+    padding: 10px;
+    transition: 0.2s ease-in-out;
+
+    .login-img {
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      background-color: transparent;
+      border: none;
+      font-family: $primary-font-family;
+      cursor: pointer;
+    }
+  }
+
+  .login-btn-container:hover {
+    background-color: $accent-color;
+  }
+}

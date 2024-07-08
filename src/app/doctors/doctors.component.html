@@ -44,7 +44,7 @@
   <div class="hp-card-table-switcher-container">
     <button
       type="button"
-      class="hp-switch-item"
+      class="hp-switch-item hp-switch-card"
       [ngClass]="{ isActive: isCardView }"
       (click)="onViewChange()"
     >
@@ -52,7 +52,7 @@
     </button>
     <button
       type="button"
-      class="hp-switch-item"
+      class="hp-switch-item hp-switch-table"
       [ngClass]="{ isActive: !isCardView }"
       (click)="onViewChange()"
     >

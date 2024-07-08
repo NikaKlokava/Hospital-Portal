@@ -33,3 +33,16 @@ export const TABLE_HEADERS = [
 
 export const DOCTORS_PER_PAGE = 6;
 export const UNKNOWN_SPECIALITY = 'unknown';
+
+export const WORKING_HOURS = [
+  '09:00',
+  '10:00',
+  '11:00',
+  '12:00',
+  '13:00',
+  '14:00',
+  '15:00',
+  '16:00',
+  '17:00',
+  '18:00',
+];

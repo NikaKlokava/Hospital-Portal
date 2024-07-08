@@ -1,0 +1,66 @@
+@import "../../../../styles";
+
+:host {
+  @include flexColumnWithGap($gap: 20px);
+
+  .appointment-form-header {
+    color: $accent-color;
+    align-self: center;
+  }
+
+  .appointment-form {
+    @include flexColumnWithGap($gap: 15px);
+
+    .input-container {
+      display: flex;
+      justify-content: space-between;
+
+      .label-container {
+        min-height: 40px;
+      }
+
+      h4 {
+        font-weight: 400;
+      }
+
+      .input {
+        height: 30px;
+        width: 60%;
+        border: none;
+      }
+
+      input[type="radio"] {
+        accent-color: $dark-color;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .hours-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-left: 30px;
+
+        .hour-item {
+          padding: 10px;
+          border-radius: 10px;
+          background-color: $brown-color;
+          color: $primary-color;
+          cursor: pointer;
+        }
+
+        .hour-item:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+}
+
+.disabled {
+  opacity: 0.7;
+}
