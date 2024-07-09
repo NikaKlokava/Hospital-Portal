@@ -1,0 +1,11 @@
+<div class="hp-pagination-container" *ngIf="totalPages | async as totalPages">
+  <button
+    type="button"
+    class="hp-pagination-item"
+    *ngFor="let _ of [].constructor(totalPages); let i = index"
+    [ngClass]="{ isActive: (currentPage | async) === i }"
+    (click)="changePage(i)"
+  >
+    {{ i + 1 }}
+  </button>
+</div>

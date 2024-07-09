@@ -1,11 +1,13 @@
 $primary-color: #fff;
 $dark-color: #353c3f;
 $brown-color: #756867;
-$accent-color: #ff8d3f;
+$accent-color: #a4bc41;
 $light-grey-color: #d5d6d2;
 
 $primary-font-family: "Domine", sans-serif;
 $secondary-font-family: "Yeseva One", sans-serif;
+
+$primary-padding: 30px 120px;
 
 @font-face {
   font-family: "Domine";
@@ -22,13 +24,49 @@ $secondary-font-family: "Yeseva One", sans-serif;
   font-style: normal;
 }
 
-body {
-  box-sizing: border-box;
+@mixin containerStyle {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 10px 120px;
+  background-color: $dark-color;
 }
 
-h1,
-p {
+@mixin flexColumnWithGap($gap: 5px) {
+  display: flex;
+  flex-direction: column;
+  row-gap: $gap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
   font-family: $primary-font-family;
-  color: $dark-color;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0px;
+  color: $dark-color;
+}
+
+p {
+  font-size: small;
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: $accent-color;
 }
