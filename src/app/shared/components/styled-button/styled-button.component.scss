@@ -1,0 +1,16 @@
+@import "../../../../styles";
+
+.hp-styled-button {
+  border: none;
+  border-radius: 20px;
+  background-color: $accent-color;
+  font-family: $primary-font-family;
+  color: $dark-color;
+  padding: 8px 20px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.hp-styled-button:hover {
+  color: $primary-color;
+}

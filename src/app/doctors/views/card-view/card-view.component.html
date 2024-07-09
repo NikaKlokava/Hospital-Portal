@@ -1,0 +1,6 @@
+<div class="hp-card-view-container">
+  <hp-doctor-card
+    *ngFor="let doctor of doctors; trackBy: trackByFn"
+    [doctor]="doctor"
+  />
+</div>

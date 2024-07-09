@@ -1,0 +1,29 @@
+@import "../../../../styles";
+
+:host {
+  align-self: center;
+  justify-self: flex-end;
+
+  .hp-book-an-appointment-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 15px;
+    padding: 20px;
+    background-color: $accent-color;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    .hp-title {
+      color: $dark-color;
+    }
+
+    .hp-calendar-svg {
+      height: 40px;
+    }
+  }
+
+  .hp-book-an-appointment-container:hover {
+    box-shadow: 1px 1px 10px $dark-color;
+  }
+}

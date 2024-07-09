@@ -1,0 +1,22 @@
+@import "../../../../styles";
+
+.hp-header-container {
+  @include containerStyle;
+  justify-content: space-between;
+
+  .hp-navbar-container {
+    display: flex;
+    column-gap: 20px;
+
+    .hp-navbar-item {
+      color: $primary-color;
+      font-size: 14px;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .hp-navbar-item:hover {
+      color: $accent-color;
+    }
+  }
+}

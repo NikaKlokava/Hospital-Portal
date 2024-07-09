@@ -1,0 +1,9 @@
+@import "../../../../styles";
+
+.hp-footer-container {
+  @include containerStyle;
+
+  .hp-footer-content {
+    color: $primary-color;
+  }
+}

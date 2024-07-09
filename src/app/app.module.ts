@@ -1,18 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp({
+      apiKey: environment.apiKey,
+      authDomain: environment.authDomain,
+      projectId: environment.projectId,
+      storageBucket: environment.storageBucket,
+      messagingSenderId: environment.messagingSenderId,
+      appId: environment.appId,
+      measurementId: environment.measurementId,
+    }),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

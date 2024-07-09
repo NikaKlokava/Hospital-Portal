@@ -1,0 +1,33 @@
+@import "../../../../styles";
+
+.hp-statistics-tab-container {
+  display: flex;
+  padding: $primary-padding;
+  justify-content: space-between;
+
+  li {
+    list-style-type: none;
+
+    .hp-tab-btn {
+      width: 100%;
+      min-height: 50px;
+      background-color: $accent-color;
+      font-family: $primary-font-family;
+      color: $dark-color;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .hp-tab-btn:hover {
+      color: $primary-color;
+    }
+
+    .active {
+      color: $primary-color;
+    }
+  }
+
+  .hp-statistics-tab-content {
+    min-width: 80%;
+  }
+}

@@ -1,0 +1,13 @@
+<hp-tabs>
+  <hp-tab
+    *ngFor="let statistics of statisticsData | async; index as i"
+    [tabTitle]="statistics.data.title"
+    [index]="i"
+  >
+    <div
+      echarts
+      [options]="statistics.data | echartsOption : statistics.type"
+      class="hp-chart"
+    ></div>
+  </hp-tab>
+</hp-tabs>

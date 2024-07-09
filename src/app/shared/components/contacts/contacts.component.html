@@ -1,0 +1,12 @@
+<div class="hp-contacts-container">
+  <p class="hp-subtitle">Get in touch</p>
+  <h2 class="hp-title">Contacts</h2>
+  <div class="hp-contact-items-container">
+    <div class="hp-contact-item" *ngFor="let contact of contacts">
+      <img [src]="contact.img" alt="" class="hp-contact-svg" />
+      <p class="hp-contact-title">{{ contact.title | uppercase }}</p>
+      <p>{{ contact.description1 }}</p>
+      <p>{{ contact.description2 }}</p>
+    </div>
+  </div>
+</div>
