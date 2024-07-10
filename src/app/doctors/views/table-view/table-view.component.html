@@ -4,7 +4,7 @@
       <th>name</th>
       <th>specialization</th>
       <th>experience</th>
-      <th *ngIf="isAdmin">Top</th>
+      <th *ngIf="isAdmin | async">Top</th>
       <th>description</th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
       <td>{{ doctor.name }}</td>
       <td>{{ doctor.specialization }}</td>
       <td>{{ doctor.experience }} years</td>
-      <td *ngIf="isAdmin">
+      <td *ngIf="isAdmin | async">
         <input
           type="checkbox"
           [value]="doctor.top"
