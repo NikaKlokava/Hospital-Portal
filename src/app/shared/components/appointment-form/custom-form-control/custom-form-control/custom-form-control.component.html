@@ -11,6 +11,8 @@
     [type]="inputType"
     [id]="inputId"
     class="input"
+    [max]="inputId === 'birth' && currentDate"
+    [min]="inputId === 'date' && currentDate"
     [formControl]="customFormControl"
   />
 </form>

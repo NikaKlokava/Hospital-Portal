@@ -102,6 +102,7 @@
     <hp-styled-button
       [btnText]="'Submit'"
       [btnType]="'submit'"
+      [disabled]="appointmentForm.invalid"
       [class.disabled]="appointmentForm.invalid"
     />
   </div>

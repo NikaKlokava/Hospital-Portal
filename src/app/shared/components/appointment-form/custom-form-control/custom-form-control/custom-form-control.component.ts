@@ -34,9 +34,15 @@ export class CustomFormControlComponent
   @Input() inputType!: string;
   @Input() inputId!: string;
 
+  currentDate!: string;
+
   private onTouched!: () => void;
 
   customFormControl = new FormControl('', [Validators.required]);
+
+  constructor() {
+    this.currentDate = new Date().toISOString().split('T')[0];
+  }
 
   validate(control: AbstractControl): ValidationErrors | null {
     if (this.customFormControl.valid) {
