@@ -15,9 +15,7 @@ export class BoxColorDirective implements OnChanges {
 
     if (creationDate < currentDateTime) {
       this.el.nativeElement.style.boxShadow = `5px 5px 10px #45455b`;
-      return;
-    }
-    if (creationDate > currentDateTime) {
+    } else {
       this.el.nativeElement.style.boxShadow = `5px 5px 10px #a4bc41`;
     }
   }

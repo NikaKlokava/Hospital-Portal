@@ -13,11 +13,9 @@ export class AuthService {
   isAdmin: Observable<boolean> = this.isAdminSubject.asObservable();
 
   constructor(private auth: AngularFireAuth) {
-    this.auth.user.subscribe((userData) =>
-      userData?.uid === environment.adminUid
-        ? this.isAdminSubject.next(true)
-        : this.isAdminSubject.next(false)
-    );
+    this.auth.user.subscribe((userData) => {
+      this.isAdminSubject.next(userData?.uid === environment.adminUid);
+    });
   }
 
   login(): void {

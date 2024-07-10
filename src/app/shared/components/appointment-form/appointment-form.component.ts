@@ -54,12 +54,7 @@ export class AppointmentFormComponent {
   }
 
   private resetForm(): void {
-    this.appointmentForm.controls.birthDate.reset();
-    this.appointmentForm.controls.date.reset();
-    this.appointmentForm.controls.doctor.reset();
-    this.appointmentForm.controls.time.reset();
-    this.appointmentForm.controls.newPatient.reset();
-    this.appointmentForm.controls.comments.reset();
+    this.appointmentForm.reset();
   }
 
   checkIfTouched(field: string): boolean {
