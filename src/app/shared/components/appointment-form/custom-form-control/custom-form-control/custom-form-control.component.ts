@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef, Input, OnDestroy } from '@angular/core';
 import {
   AbstractControl,
   ControlValueAccessor,
@@ -28,7 +28,7 @@ import {
   ],
 })
 export class CustomFormControlComponent
-  implements ControlValueAccessor, Validator
+  implements ControlValueAccessor, Validator, OnDestroy
 {
   @Input() formTitle!: string;
   @Input() inputType!: string;
@@ -43,6 +43,9 @@ export class CustomFormControlComponent
   constructor() {
     this.currentDate = new Date().toISOString().split('T')[0];
   }
+  ngOnDestroy(): void {
+    this.customFormControl.reset();
+  }
 
   validate(control: AbstractControl): ValidationErrors | null {
     if (this.customFormControl.valid) {
@@ -52,6 +55,10 @@ export class CustomFormControlComponent
   }
 
   writeValue(obj: any): void {
+    if (obj === null) {
+      this.customFormControl.reset();
+    }
+
     obj && this.customFormControl.setValue(obj, { emitEvent: false });
   }
 

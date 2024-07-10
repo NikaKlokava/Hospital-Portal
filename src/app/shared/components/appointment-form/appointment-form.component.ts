@@ -43,7 +43,7 @@ export class AppointmentFormComponent {
 
   onClose(): void {
     this.modalService.close(Modal.appointmentForm);
-    this.resetForm();
+    this.appointmentForm.reset();
   }
 
   saveChanges(event: any): void {
