@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageBannerComponent } from './page-banner.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('PageBannerComponent', () => {
   let component: PageBannerComponent;
@@ -8,9 +9,10 @@ describe('PageBannerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageBannerComponent ]
-    })
-    .compileComponents();
+      declarations: [PageBannerComponent],
+
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PageBannerComponent);
     component = fixture.componentInstance;

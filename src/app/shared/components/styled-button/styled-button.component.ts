@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class StyledButtonComponent {
   @Input() btnText!: string;
   @Input() btnType!: string;
+  @Input() disabled!: boolean;
   @Output() btnClick = new EventEmitter<any>();
 
   onClick(): void {

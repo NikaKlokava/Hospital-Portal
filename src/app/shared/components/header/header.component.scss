@@ -4,19 +4,41 @@
   @include containerStyle;
   justify-content: space-between;
 
-  .hp-navbar-container {
+  .hp-profile-btn {
+    border: none;
+    background-color: transparent;
+    color: $primary-color;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-family: $primary-font-family;
+  }
+  .hp-profile-btn:hover {
+    color: $accent-color;
+  }
+
+  .hp-links-container {
     display: flex;
     column-gap: 20px;
 
-    .hp-navbar-item {
+    .hp-link-item {
+      text-decoration: none;
       color: $primary-color;
       font-size: 14px;
       transition: 0.3s ease-in-out;
       cursor: pointer;
     }
 
-    .hp-navbar-item:hover {
+    .hp-link-item:hover {
       color: $accent-color;
     }
+
+    .hp-link-item.router-link-active {
+      color: $accent-color;
+    }
+  }
+
+  .hp-logout-btns-container {
+    display: flex;
+    column-gap: 30px;
   }
 }

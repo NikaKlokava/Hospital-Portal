@@ -13,7 +13,7 @@ export class StatisticsService {
 
   constructor(private db: AngularFireDatabase) {}
 
-  loadData() {
+  loadData(): void {
     this.db
       .list('/statistics')
       .valueChanges()

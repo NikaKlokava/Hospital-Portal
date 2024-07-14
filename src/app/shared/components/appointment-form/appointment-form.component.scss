@@ -1,0 +1,63 @@
+@import "../../../../styles";
+
+:host {
+  @include flexColumnWithGap($gap: 20px);
+
+  .hp-appointment-form-header {
+    color: $accent-color;
+    align-self: center;
+  }
+
+  .hp-appointment-form {
+    @include flexColumnWithGap($gap: 15px);
+
+    .hp-input-container {
+      display: flex;
+      justify-content: space-between;
+
+      .hp-label-container {
+        min-height: 40px;
+      }
+
+      h4 {
+        font-weight: 400;
+      }
+
+      .hp-input {
+        height: 30px;
+        width: 60%;
+        border: none;
+      }
+
+      input[type="radio"] {
+        accent-color: $dark-color;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .hp-hours-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-left: 30px;
+
+        .hp-hour-item {
+          padding: 10px;
+          border-radius: 10px;
+          background-color: $brown-color;
+          color: $primary-color;
+          cursor: pointer;
+        }
+
+        .hp-hour-item:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+}
+

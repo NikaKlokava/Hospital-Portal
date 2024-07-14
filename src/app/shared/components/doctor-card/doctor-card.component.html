@@ -1,11 +1,16 @@
 <div class="hp-doctor-card-container">
-  <div class="hp-top-circle-container" *ngIf="isAdmin">
+  <button
+    class="hp-top-circle-container"
+    *ngIf="isAdmin | async"
+    (click)="onTopDoctorChange()"
+  >
     <img
+      *ngIf="doctor.top"
       src="https://raw.githubusercontent.com/NikaKlokava/hospital-portal-assets/main/svgs/star.svg"
       alt=""
       class="hp-star"
     />
-  </div>
+  </button>
   <img [src]="doctor.photo" alt="" class="hp-doctor-photo" />
 
   <div class="hp-card-description-container">
@@ -13,5 +18,5 @@
     <p>Experience: {{ doctor.experience }} years</p>
     <p>{{ doctor.description }}</p>
   </div>
-  <p class="hp-specialization">{{ doctor.specialization | uppercase }}</p>
+  <p class="hp-specialization">{{ doctor.specialization }}</p>
 </div>

@@ -14,3 +14,7 @@
 .hp-styled-button:hover {
   color: $primary-color;
 }
+
+.hp-styled-button[disabled] {
+  opacity: 0.7;
+}

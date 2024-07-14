@@ -1,8 +1,8 @@
 import { EChartsOption, SeriesOption } from 'echarts';
 import { StatisticsData, StatisticsSeries } from '../statistics-data.model';
 
-const WEEK_DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-const MONTHS_NAMES = [
+export const WEEK_DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+export const MONTHS_NAMES = [
   'January',
   'February',
   'March',

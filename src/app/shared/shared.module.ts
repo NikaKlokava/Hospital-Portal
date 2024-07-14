@@ -9,6 +9,11 @@ import { DoctorCardComponent } from './components/doctor-card/doctor-card.compon
 import { PageBannerComponent } from './components/page-banner/page-banner.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoaderComponent } from './components/loader/loader.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { LoginComponent } from './components/login/login.component';
+import { AppointmentFormComponent } from './components/appointment-form/appointment-form.component';
+import { CustomFormControlComponent } from './components/appointment-form/custom-form-control/custom-form-control/custom-form-control.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +24,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactsComponent,
     DoctorCardComponent,
     PageBannerComponent,
+    LoaderComponent,
+    ModalComponent,
+    LoginComponent,
+    AppointmentFormComponent,
+    CustomFormControlComponent,
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [
@@ -29,6 +39,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactsComponent,
     DoctorCardComponent,
     PageBannerComponent,
+    LoaderComponent,
+    ModalComponent,
+    LoginComponent,
+    AppointmentFormComponent,
+    CustomFormControlComponent,
   ],
 })
 export class SharedModule {}

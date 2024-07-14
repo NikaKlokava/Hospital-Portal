@@ -23,39 +23,44 @@
   </div>
 </div>
 
-<div class="hp-top-doctors-content-container">
-  <h3>Best doctors of the week</h3>
-  <div class="hp-top-doctors-container">
-    <hp-doctor-card
-      *ngFor="let topDoctor of topDoctors | async; trackBy: trackTopDoctorsByFn"
-      [doctor]="topDoctor"
+<hp-loader>
+  <div class="hp-top-doctors-content-container">
+    <h3>Best doctors of the week</h3>
+    <div class="hp-top-doctors-container">
+      <hp-doctor-card
+        *ngFor="
+          let topDoctor of topDoctors | async;
+          trackBy: trackTopDoctorsByFn
+        "
+        [doctor]="topDoctor"
+      />
+    </div>
+    <hp-styled-button
+      btnText="See all doctors"
+      btnType="button"
+      (btnClick)="onNavigate()"
     />
   </div>
-  <hp-styled-button
-    btnText="See all doctors"
-    btnType="button"
-    (btnClick)="onNavigate()"
-  />
-</div>
 
-<div class="hp-specialties-content-container">
-  <p class="hp-subtitle">Always Caring</p>
-  <h2>Our Specialties</h2>
-  <div class="hp-specialties-container">
-    <div
-      *ngFor="
-        let specialty of specialties | async;
-        trackBy: trackSpecialtiesByFn
-      "
-      class="hp-specialty-container"
-    >
-      <img
-        src="https://raw.githubusercontent.com/NikaKlokava/hospital-portal-assets/main/svgs/heart.svg"
-        alt=""
-      />
-      <p>{{ specialty.name }}</p>
+  <div class="hp-specialties-content-container">
+    <p class="hp-subtitle">Always Caring</p>
+    <h2>Our Specialties</h2>
+    <div class="hp-specialties-container">
+      <div
+        *ngFor="
+          let specialty of specialties | async;
+          trackBy: trackSpecialtiesByFn
+        "
+        class="hp-specialty-container"
+      >
+        <img
+          src="https://raw.githubusercontent.com/NikaKlokava/hospital-portal-assets/main/svgs/heart.svg"
+          alt=""
+        />
+        <p>{{ specialty.name }}</p>
+      </div>
     </div>
   </div>
-</div>
+</hp-loader>
 
 <hp-contacts />

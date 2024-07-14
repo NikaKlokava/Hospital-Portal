@@ -1,0 +1,13 @@
+<div
+  *ngIf="this.loader.loading | async; else showContent"
+  class="hp-loader-container"
+>
+  <div class="hp-loader-wrapper">
+    <div class="hp-loader-speeding-wheel"></div>
+  </div>
+  <div class="hp-loader-background"></div>
+</div>
+
+<ng-template #showContent>
+  <ng-content></ng-content>
+</ng-template>

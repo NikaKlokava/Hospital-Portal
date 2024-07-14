@@ -1,89 +1,91 @@
 <hp-page-banner [pageTitle]="title" [bannerImgUrl]="url" />
 
-<div class="hp-search-bar-container">
-  <hp-search-bar (sendInputValue)="onSearchStrChange($event)" />
+<hp-loader>
+  <div class="hp-search-bar-container">
+    <hp-search-bar (sendInputValue)="onSearchStrChange($event)" />
 
-  <div class="hp-sort-by-container">
-    <select
-      class="hp-select-container"
-      [formControl]="sortingType"
-      (change)="onSortingTypeChange()"
-    >
-      <option value="" hidden>Sort by:</option>
-      <option
-        *ngFor="let sortingType of sortingTypes"
-        class="hp-option-item"
-        [value]="sortingType"
+    <div class="hp-sort-by-container">
+      <select
+        class="hp-select-container"
+        [formControl]="sortingType"
+        (change)="onSortingTypeChange()"
       >
-        {{ sortingType }}
-      </option>
-    </select>
+        <option value="" hidden>Sort by:</option>
+        <option
+          *ngFor="let sortingType of sortingTypes"
+          class="hp-option-item"
+          [value]="sortingType"
+        >
+          {{ sortingType }}
+        </option>
+      </select>
+    </div>
   </div>
-</div>
 
-<div class="hp-doctors-list-container" #target>
-  <div class="hp-filter-by-container">
-    <h4 class="hp-filter-by-title">Filter by:</h4>
-    <p class="hp-filter-criterion">Specialization</p>
-    <div class="hp-checkboxes-container">
-      <div
-        *ngFor="let item of visibleSpecialties | async; let i = index"
-        class="hp-checkbox-container"
-      >
-        <input
-          type="checkbox"
-          [id]="i"
-          [(ngModel)]="item.checked"
-          (change)="onSpecialtiesChange()"
-        />
-        <label [for]="i">{{ item.name }}</label>
+  <div class="hp-doctors-list-container" #target>
+    <div class="hp-filter-by-container">
+      <h4 class="hp-filter-by-title">Filter by:</h4>
+      <p class="hp-filter-criterion">Specialization</p>
+      <div class="hp-checkboxes-container">
+        <div
+          *ngFor="let item of visibleSpecialties | async; let i = index"
+          class="hp-checkbox-container"
+        >
+          <input
+            type="checkbox"
+            [id]="i"
+            [(ngModel)]="item.checked"
+            (change)="onSpecialtiesChange()"
+          />
+          <label [for]="i">{{ item.name }}</label>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="hp-card-table-switcher-container">
-    <button
-      type="button"
-      class="hp-switch-item"
-      [ngClass]="{ isActive: isCardView }"
-      (click)="onViewChange()"
-    >
-      card
-    </button>
-    <button
-      type="button"
-      class="hp-switch-item"
-      [ngClass]="{ isActive: !isCardView }"
-      (click)="onViewChange()"
-    >
-      table
-    </button>
-  </div>
-  <div
-    class="hp-doctors-container"
-    *ngIf="visibleDoctors | async as visibleDoctors"
-  >
-    <div
-      class="hp-view-container"
-      *ngIf="visibleDoctors.length > 0; else showNoDoctors"
-    >
-      <hp-card-view
-        [doctors]="visibleDoctors"
-        *ngIf="isCardView; else showTable"
-      />
-      <ng-template #showTable>
-        <hp-table-view [doctors]="visibleDoctors"
-      /></ng-template>
+    <div class="hp-card-table-switcher-container">
+      <button
+        type="button"
+        class="hp-switch-item hp-switch-card"
+        [ngClass]="{ isActive: isCardView }"
+        (click)="onViewChange()"
+      >
+        card
+      </button>
+      <button
+        type="button"
+        class="hp-switch-item hp-switch-table"
+        [ngClass]="{ isActive: !isCardView }"
+        (click)="onViewChange()"
+      >
+        table
+      </button>
     </div>
-    <ng-template #showNoDoctors
-      >There is no such doctor. Try to search again.</ng-template
+    <div
+      class="hp-doctors-container"
+      *ngIf="visibleDoctors | async as visibleDoctors"
     >
+      <div
+        class="hp-view-container"
+        *ngIf="visibleDoctors.length > 0; else showNoDoctors"
+      >
+        <hp-card-view
+          [doctors]="visibleDoctors"
+          *ngIf="isCardView; else showTable"
+        />
+        <ng-template #showTable>
+          <hp-table-view [doctors]="visibleDoctors"
+        /></ng-template>
+      </div>
+      <ng-template #showNoDoctors
+        >There is no such doctor. Try to search again.</ng-template
+      >
 
-    <hp-pagination
-      [currentPage]="paginationCurrent"
-      [totalPages]="paginationSize"
-      (pageChanged)="onPageChange($event, target)"
-    />
+      <hp-pagination
+        [currentPage]="paginationCurrent"
+        [totalPages]="paginationSize"
+        (pageChanged)="onPageChange($event, target)"
+      />
+    </div>
   </div>
-</div>
+</hp-loader>
 <hp-contacts />
