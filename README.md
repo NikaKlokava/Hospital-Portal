@@ -1,27 +1,36 @@
-# MyProject
+# <p align="center"> _*`Hospital Portal`*_ </p>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
-## Development server
+## [_Website_](https://hospital-portal-git-develop-veranikas-projects.vercel.app/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Project
 
-## Code scaffolding
+- This is a hospital portal, the idea of ​​which is to provide information about a given medical institution, such as general information, top best doctors of the week, available specialties of doctors and a list of all working doctors in this hospital; 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Hospital portal allows you the opportunity to make an appointment with a doctor of your interest;
 
-## Build
+- This application implements three roles: guest, user and administrator;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Login with Google to your accaunt and always be aware of all your upcoming appointments with doctors;
 
-## Running unit tests
+#
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Work with:
 
-## Running end-to-end tests
+- Angular v.15.0.0;
+- Firebase Authentication (sign-in provider: _Google_ / signInWithPopup);
+- Firebase Realtime Database (onChange, get, update, remove)
+- CommonModule, RouterModule, ReactiveFormsModule, AngularFireModule;
+- Routing modules, Shared module;
+- Directives, Pipes, Services, Guards, bindings and etc.
+- libraries :
+  - Echarts;
+  - Firebase;
+  - lodash;
+  - uuid;
+- envs;
+- unit tests;
+- SCSS (common styles, mixins, import, vars);
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![alt text](http://url/to/img.png)

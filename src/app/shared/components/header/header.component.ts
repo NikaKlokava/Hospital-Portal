@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { NAVBAR_ITEMS } from './navbar';
-import { NavbarItem } from './navbar.model';
+import { AuthService } from 'src/app/core/auth.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ModalService } from '../modal/modal.service';
+import * as firebase from 'firebase/auth';
+import { Modal } from '../modal/modal.model';
 
 @Component({
   selector: 'hp-header',
@@ -8,13 +12,32 @@ import { NavbarItem } from './navbar.model';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  navbarItems: NavbarItem[] = NAVBAR_ITEMS;
+  userInfo!: Observable<firebase.UserInfo | null>;
+  isAdmin!: boolean;
 
-  login(): void {
-    console.log('login');
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private modalService: ModalService
+  ) {}
+
+  ngOnInit(): void {
+    this.userInfo = this.authService.getAuthInfo();
+    this.authService.isAdmin.subscribe((data) => {
+      this.isAdmin = data;
+    });
   }
 
-  trackByFn(_i: number, item: NavbarItem): string {
-    return item.title;
+  login(): void {
+    this.modalService.open(Modal.loginForm);
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['home']);
+  }
+
+  onNavigate(): void {
+    this.router.navigate(['profile']);
   }
 }

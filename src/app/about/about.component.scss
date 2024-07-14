@@ -52,6 +52,8 @@
 
   .hp-top-doctors-container {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
     column-gap: 40px;
   }
 }
@@ -79,12 +81,6 @@
       border: 2px solid $light-grey-color;
       border-radius: 10px;
       padding: 10px 40px;
-      transition: 0.3s ease-in-out;
-      cursor: pointer;
-    }
-
-    .hp-specialty-container:hover {
-      background-color: $light-grey-color;
     }
   }
 }

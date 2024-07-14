@@ -70,3 +70,12 @@ input[type="checkbox"] {
   height: 20px;
   accent-color: $accent-color;
 }
+
+textarea {
+  resize: none;
+}
+
+.valid-message {
+  font-size: x-small;
+  color: red;
+}

@@ -1,0 +1,54 @@
+@import "../../styles";
+
+.hp-profile-page-container {
+  .hp-profile-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $light-grey-color;
+    padding: 10px 120px;
+
+    h3 {
+      font-family: $secondary-font-family;
+    }
+  }
+  .hp-appintments-container {
+    @include flexColumnWithGap($gap: 15px);
+    padding: $primary-padding;
+
+    .hp-appointment-item-container {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+      width: max-content;
+      padding: 20px;
+      background-color: $light-grey-color;
+      border-radius: 20px;
+      box-shadow: 5px 5px 10px $dark-color;
+
+      .hp-appointment-user-data-container {
+        @include flexColumnWithGap();
+        width: 200px;
+
+        p {
+          letter-spacing: 1px;
+          font-family: $secondary-font-family;
+        }
+      }
+
+      .hp-vertical-line {
+        height: 50px;
+        border-right: 2px solid $dark-color;
+      }
+
+      .hp-appointment-data-container {
+        @include flexColumnWithGap();
+        min-width: 200px;
+        p {
+          color: $brown-color;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}

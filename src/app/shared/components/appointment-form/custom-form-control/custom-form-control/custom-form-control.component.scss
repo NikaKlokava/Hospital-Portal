@@ -1,0 +1,22 @@
+@import "../../../../../../styles";
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+
+  .label-container {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+  }
+
+  h4 {
+    font-weight: 300;
+  }
+
+  .input {
+    height: 30px;
+    width: 60%;
+    border: none;
+  }
+}

@@ -11,12 +11,19 @@
     column-gap: 15px;
     padding: 20px;
     background-color: $accent-color;
+    border: none;
+    border-radius: 30px;
     transition: 0.3s ease-in-out;
-    cursor: pointer;
+    box-shadow: 0 0 0 0 $accent-color;
 
-    .hp-title {
-      color: $dark-color;
-    }
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+
+    transition: all 300ms ease-in-out;
+
+    cursor: pointer;
 
     .hp-calendar-svg {
       height: 40px;
@@ -24,6 +31,33 @@
   }
 
   .hp-book-an-appointment-container:hover {
-    box-shadow: 1px 1px 10px $dark-color;
+    box-shadow: 1px 1px 10px 10px $brown-color;
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    animation: none;
+  }
+}
+
+@-webkit-keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+  }
+}
+@-moz-keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+  }
+}
+
+@-ms-keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+  }
+}
+
+@keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
   }
 }
