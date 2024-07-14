@@ -34,7 +34,6 @@ describe('EchartsOptionPipe', () => {
       mockStatisticsData,
       StatisticsTypes.INSURANCE_PIE
     );
-    console.log(transformedArray.series);
     expect(transformedArray.series).toEqual([
       {
         name: 'test name 1',

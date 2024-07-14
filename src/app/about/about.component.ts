@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { ABOUT_PAGE_DATA } from '../shared/constants';
 import { PageData } from './about.model';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Doctor } from '../shared/components/doctor-card/doctor.model';
 import { Router } from '@angular/router';
 import { DoctorsSpecialty } from '../shared/models/doctors-specialty.model';
 import { TopDoctorsService } from './services/top-doctors.service';
-import { LoaderService } from '../shared/components/loader/loader.service';
 
 @Component({
   selector: 'hp-about',
