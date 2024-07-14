@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
-## [_Website_](https://hospital-portal-git-develop-veranikas-projects.vercel.app/)
+## [_Website_](https://hospital-portal-lime.vercel.app)
 
 ### Project
 
