@@ -33,4 +33,3 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - unit tests;
 - SCSS (common styles, mixins, import, vars);
 
-![alt text](http://url/to/img.png)
