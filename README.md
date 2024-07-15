@@ -23,6 +23,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Firebase Realtime Database (onChange, get, update, remove)
 - CommonModule, RouterModule, ReactiveFormsModule, AngularFireModule;
 - Routing modules, Shared module;
+- reusable components, lifecycle hooks;
 - Directives, Pipes, Services, Guards, bindings and etc.
 - libraries :
   - Echarts;
